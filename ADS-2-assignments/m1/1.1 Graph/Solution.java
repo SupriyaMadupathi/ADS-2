@@ -83,6 +83,11 @@ class Newgraph implements Graph {
             adj[i] = new Bag<Integer>();
         }
     }
+    /**
+     * Constructs the object.
+     *
+     * @param      scan  The scan
+     */
     Newgraph(Scanner scan) {
         this.vertices = Integer.parseInt(scan.nextLine());
         adj = (Bag<Integer>[]) new Bag[vertices];
@@ -96,13 +101,29 @@ class Newgraph implements Graph {
             addEdge(Integer.parseInt(inputs[0]), Integer.parseInt(inputs[1]));
         }
     }
+    /**
+     * { vertices }.
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int vertices() {
         return vertices;
     }
+    /**
+     * {edges }.
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int edges() {
         return edges;
     }
-    public void addEdge(int vertexOne,int vertexTwo) {
+    /**
+     * Adds an edge.
+     *
+     * @param      vertexOne  The vertex one
+     * @param      vertexTwo  The vertex two
+     */
+    public void addEdge(final int vertexOne, final int vertexTwo) {
         if (vertexOne == vertexTwo) {
             return;
         }
@@ -122,8 +143,17 @@ class Newgraph implements Graph {
                 }
         } return false;
     }
-    public void show(int vert, int edg,
-        String[] tok) throws Exception {
+    /**
+     * { show }
+     *
+     * @param      vert       The vertical
+     * @param      edg        The edg
+     * @param      tok        The tok
+     *
+     * @throws     Exception  { exception_description }
+     */
+    public void show(final int vert, final int edg,
+       final String[] tok) throws Exception {
         if (edg <= 1 && vert <= 1) {
             System.out.println(vertices()
                 + " vertices" + ", " + edges() + " edges");
@@ -149,8 +179,8 @@ class Newgraph implements Graph {
      *
      * @throws     Exception  No edges
      */
-    public void show1(int vertex1,
-        int edge1) throws Exception {
+    public void show1(final int vertex1,
+        final int edge1) throws Exception {
         if (edge1 <= 1 && vertex1 <= 1) {
             System.out.println(vertices()
                 + " vertices" + ", " + edges() + " edges");
@@ -176,17 +206,16 @@ class Newgraph implements Graph {
     }
 }
 /**
- * { class for solution }
+ * { class for solution }.
  */
 public final class Solution {
-	/**
-	 * Constructs the object.
-	 */
+    /**
+     * Constructs the object.
+     */
     private Solution() {
-
     }
     /**
-     * { main function }
+     * { main function }.
      *
      * @param      args  The arguments
      */
