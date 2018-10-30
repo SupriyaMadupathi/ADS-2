@@ -51,19 +51,19 @@ class Newgraph implements Graph {
     /**
      * { vertices }
      */
-     int vertices;
+    private int vertices;
     /**
      * { edges }
      */
-     int edges;
+    private int edges;
     /**
      * { bag adj}
      */
-     Bag<Integer>[] adj;
+     private Bag<Integer>[] adj;
      /**
       * { string tokens }.
       */
-     String[] tokens;
+     private String[] tokens;
 
      /**
       * Constructs the object.
