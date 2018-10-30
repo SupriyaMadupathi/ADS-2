@@ -144,8 +144,8 @@ class Newgraph implements Graph {
     /**
      * shows function of adjacency matrix list.
      *
-     * @param      vert        int
-     * @param      edg         int
+     * @param      vertex1        int
+     * @param      edge1         int
      *
      * @throws     Exception  No edges
      */

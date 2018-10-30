@@ -32,14 +32,10 @@ Starting audit...
 [ERROR] G:\ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:125:22: Parameter vert should be final. [FinalParameters]
 [ERROR] G:\ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:125:32: Parameter edg should be final. [FinalParameters]
 [ERROR] G:\ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:126:9: Parameter tok should be final. [FinalParameters]
-[ERROR] G:\ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:147:8: Unused @param tag for 'vert'. [JavadocMethod]
-[ERROR] G:\ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:148:8: Unused @param tag for 'edg'. [JavadocMethod]
 [ERROR] G:\ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:152:23: Parameter vertex1 should be final. [FinalParameters]
-[ERROR] G:\ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:152:27: Expected @param tag for 'vertex1'. [JavadocMethod]
 [ERROR] G:\ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:153:9: Parameter edge1 should be final. [FinalParameters]
-[ERROR] G:\ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:153:13: Expected @param tag for 'edge1'. [JavadocMethod]
 [ERROR] G:\ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:178: First sentence should end with a period. [JavadocStyle]
 [ERROR] G:\ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:182:1: File contains tab characters (this is the first instance). [FileTabCharacter]
 [ERROR] G:\ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:188: First sentence should end with a period. [JavadocStyle]
 Audit done.
-Checkstyle ends with 42 errors.
+Checkstyle ends with 38 errors.
