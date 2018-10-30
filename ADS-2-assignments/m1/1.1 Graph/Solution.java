@@ -94,7 +94,7 @@ class Newgraph implements Graph {
         if (edg <= 1 && vert <= 1) {
             System.out.println(vertices()
                 + " vertices" + ", " + edges() + " edges");
-            //throw new Exception("No edges");
+            throw new Exception("No edges");
         } else {
             System.out.println(vertices()
                 + " vertices" + ", " + edges() + " edges");
