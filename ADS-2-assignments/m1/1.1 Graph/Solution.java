@@ -1,28 +1,80 @@
 import java.util.Scanner;
 
+/**
+ * Interface for graph.
+ */
 interface Graph {
    
+    /**
+     * { vertices }
+     *
+     * @return     { description_of_the_return_value }
+     */
     int vertices();
-    
+    /**
+     * { edges }
+     *
+     * @return     { description_of_the_return_value }
+     */
     int edges();
-    
+    /**
+     * Adds an edge.
+     *
+     * @param      v     { int }
+     * @param      w     { int }
+     */
     void addEdge(int v, int w);
-    
+    /**
+     * { iterable }
+     *
+     * @param      v     {int}
+     *
+     * @return     { int }
+     */
     Iterable<Integer> adj(int v);
     
+    /**
+     * Determines if it has edge.
+     *
+     * @param      v     { int }
+     * @param      w     { int }
+     *
+     * @return     True if has edge, False otherwise.
+     */
     boolean hasEdge(int v, int w);
 }
 
+/**
+ * Class for newgraph.
+ */
 class Newgraph implements Graph {
-    
+    /**
+     * { vertices }
+     */
      int vertices;
-    
+    /**
+     * { edges }
+     */
      int edges;
-    
+    /**
+     * { bag adj}
+     */
      Bag<Integer>[] adj;
+     /**
+      * { string tokens }
+      */
      String[] tokens;
+
+     /**
+      * Constructs the object.
+      */
      Newgraph() {
     }
+    /**
+     * Constructs the object.
+     *
+     * @param      vert  The vertical
+     */
     Newgraph( int vert) {
         this.vertices = vert;
         this.edges = 0;
