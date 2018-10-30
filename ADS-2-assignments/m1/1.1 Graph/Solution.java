@@ -133,10 +133,25 @@ class Newgraph implements Graph {
         edges++;
         }
     }
-    public Iterable<Integer> adj(int vertex) {
+    /**
+     * { function_description }
+     *
+     * @param      vertex  The vertex
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public Iterable<Integer> adj(final int vertex) {
         return adj[vertex];
     }
-    public boolean hasEdge(int v, int w) {
+    /**
+     * Determines if it has edge.
+     *
+     * @param      v     { parameter_description }
+     * @param      w     { parameter_description }
+     *
+     * @return     True if has edge, False otherwise.
+     */
+    public boolean hasEdge(final int v, final int w) {
         for (int k : adj[v]) {
                 if (k == w) {
                     return true;
@@ -144,7 +159,7 @@ class Newgraph implements Graph {
         } return false;
     }
     /**
-     * { show }
+     * { show }.
      *
      * @param      vert       The vertical
      * @param      edg        The edg
