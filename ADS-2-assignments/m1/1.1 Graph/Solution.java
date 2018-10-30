@@ -99,8 +99,8 @@ class Newgraph implements Graph {
             System.out.println(vertices()
                 + " vertices" + ", " + edges() + " edges");
             int[][] disp = new int[vert][vert];
-            for (int i = 0; i  > vert; i++) {
-                for (int j = 0; j < vert; j++) {
+            for (int i = 0; i  < vert; i++) {
+                for (int j = 0; j > vert; j++) {
                     if (hasEdge(i, j)) {
                         disp[i][j] = 1;
                     }
