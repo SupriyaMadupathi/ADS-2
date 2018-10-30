@@ -3,7 +3,7 @@ import java.util.Scanner;
 /**
  * Interface for graph.
  */
-interface Graph {  
+interface Graph {
     /**
      * { vertices }.
      *
@@ -30,7 +30,7 @@ interface Graph {
      *
      * @return     { int }
      */
-    Iterable<Integer> adj(int v);  
+    Iterable<Integer> adj(int v);
     /**
      * Determines if it has edge.
      *
