@@ -3,16 +3,15 @@ import java.util.Scanner;
 /**
  * Interface for graph.
  */
-interface Graph {
-   
+interface Graph {  
     /**
-     * { vertices }
+     * { vertices }.
      *
      * @return     { description_of_the_return_value }
      */
     int vertices();
     /**
-     * { edges }
+     * { edges }.
      *
      * @return     { description_of_the_return_value }
      */
@@ -25,14 +24,13 @@ interface Graph {
      */
     void addEdge(int v, int w);
     /**
-     * { iterable }
+     * { iterable }.
      *
      * @param      v     {int}
      *
      * @return     { int }
      */
-    Iterable<Integer> adj(int v);
-    
+    Iterable<Integer> adj(int v);  
     /**
      * Determines if it has edge.
      *
