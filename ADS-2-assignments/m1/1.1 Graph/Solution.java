@@ -141,25 +141,33 @@ class Newgraph implements Graph {
             }
         }
     }
-    public void show1(int vert,
-        int edg) throws Exception {
-        if (edg <= 1 && vert <= 1) {
+    /**
+     * shows function of adjacency matrix list.
+     *
+     * @param      vert        int
+     * @param      edg         int
+     *
+     * @throws     Exception  No edges
+     */
+    public void show1(int vertex1,
+        int edge1) throws Exception {
+        if (edge1 <= 1 && vertex1 <= 1) {
             System.out.println(vertices()
                 + " vertices" + ", " + edges() + " edges");
             throw new Exception("No edges");
         } else {
             System.out.println(vertices()
                 + " vertices" + ", " + edges() + " edges");
-            int[][] disp = new int[vert][vert];
-            for (int i = 0; i  < vert; i++) {
-                for (int j = 0; j < vert; j++) {
+            int[][] disp = new int[vertex1][vertex1];
+            for (int i = 0; i  < vertex1; i++) {
+                for (int j = 0; j < vertex1; j++) {
                     if (hasEdge(i, j)) {
                         disp[i][j] = 1;
                     }
                 }
             }
-            for (int i = 0; i < vert; i++) {
-                for (int j = 0; j < vert; j++) {
+            for (int i = 0; i < vertex1; i++) {
+                for (int j = 0; j < vertex1; j++) {
                     System.out.print(disp[i][j] + " ");
                 }
                 System.out.println();
@@ -167,12 +175,22 @@ class Newgraph implements Graph {
         }
     }
 }
-
+/**
+ * { class for solution }
+ */
 public final class Solution {
+	/**
+	 * Constructs the object.
+	 */
     private Solution() {
 
     }
-    public static void main(String[] args) {
+    /**
+     * { main function }
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
         String type = sc.nextLine();
         int numberofvertices = Integer.parseInt(sc.nextLine());
