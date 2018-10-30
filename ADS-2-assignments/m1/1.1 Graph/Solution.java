@@ -49,15 +49,15 @@ interface Graph {
  */
 class Newgraph implements Graph {
     /**
-     * { vertices }
+     * { vertices }.
      */
     private int vertices;
     /**
-     * { edges }
+     * { edges }.
      */
     private int edges;
     /**
-     * { bag adj}
+     * { bag adj}.
      */
      private Bag<Integer>[] adj;
      /**
