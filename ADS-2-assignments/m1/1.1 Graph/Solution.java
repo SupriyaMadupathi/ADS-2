@@ -61,7 +61,7 @@ class Newgraph implements Graph {
      */
      Bag<Integer>[] adj;
      /**
-      * { string tokens }
+      * { string tokens }.
       */
      String[] tokens;
 
@@ -75,7 +75,7 @@ class Newgraph implements Graph {
      *
      * @param      vert  The vertical
      */
-    Newgraph( int vert) {
+    Newgraph(final int vert) {
         this.vertices = vert;
         this.edges = 0;
         adj = (Bag<Integer>[]) new Bag[vert];
@@ -88,7 +88,7 @@ class Newgraph implements Graph {
      *
      * @param      scan  The scan
      */
-    Newgraph(Scanner scan) {
+    Newgraph(final Scanner scan) {
         this.vertices = Integer.parseInt(scan.nextLine());
         adj = (Bag<Integer>[]) new Bag[vertices];
         for (int i = 0; i < vertices; i++) {
@@ -134,7 +134,7 @@ class Newgraph implements Graph {
         }
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      vertex  The vertex
      *

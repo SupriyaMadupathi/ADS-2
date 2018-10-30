@@ -11,11 +11,6 @@ Starting audit...
 [ERROR] G:\ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:58:10: Variable 'edges' must be private and have accessor methods. [VisibilityModifier]
 [ERROR] G:\ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:59: First sentence should end with a period. [JavadocStyle]
 [ERROR] G:\ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:62:21: Variable 'adj' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] G:\ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:63: First sentence should end with a period. [JavadocStyle]
 [ERROR] G:\ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:66:15: Variable 'tokens' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] G:\ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:78:14: '(' is followed by whitespace. [ParenPad]
-[ERROR] G:\ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:78:15: Parameter vert should be final. [FinalParameters]
-[ERROR] G:\ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:91:14: Parameter scan should be final. [FinalParameters]
-[ERROR] G:\ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:136: First sentence should end with a period. [JavadocStyle]
 Audit done.
-Checkstyle ends with 18 errors.
+Checkstyle ends with 13 errors.
