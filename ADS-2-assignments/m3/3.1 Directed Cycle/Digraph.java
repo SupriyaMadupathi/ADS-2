@@ -1,52 +1,121 @@
+import java.util.NoSuchElementException;
+import java.util.Scanner;
 /**
  * Class for digraph.
  */
 public class Digraph {
     /**
-     * { newline variable }.
+     * Newline declaration.
      */
-    private static final String NEWLINE = System.getProperty("line.separator");
     /**
-     * { vertices variable }.
+     * number of vertices in this digraph.
      */
-    private final int vertices;           // number of vertices in this digraph
+    private final int vertices;
     /**
-     * { edges variable }.
+     * number of edges in this digraph.
      */
-    private int edges;                 // number of edges in this digraph
+    private int edges;
     /**
-     * { bag variable }.
+     * adj[v] = adjacency list for vertex v.
      */
-    private Bag<Integer>[] adj;    // adj[v] = adjacency list for vertex v
+    private Bag<Integer>[] adj;
     /**
-     * { indegree variable }.
+     * adj[v] = adjacency list for vertex v.
      */
-    private int[] indegree;        // indegree[v] = indegree of vertex v
+    private int[] indegree;
+
     /**
      * Initializes an empty digraph with <em>V</em> vertices.
      *
-     * @param  vertexOne the number of vertices
+     * @param  vertices1 the number of vertices
      * @throws IllegalArgumentException if {@code V < 0}
      */
-    public Digraph(final int vertexOne) {
-        if (vertexOne < 0) {
-         throw new IllegalArgumentException(
-            "Number of vertices in a Digraph must be nonnegative");
-     }
-        this.vertices = vertexOne;
+    public Digraph(final int vertices1) {
+        if (vertices1 < 0) {
+            throw new IllegalArgumentException(
+                "Number of vertices in a Digraph must be nonnegative");
+        }
+        this.vertices = vertices1;
         this.edges = 0;
-        indegree = new int[vertexOne];
-        adj = (Bag<Integer>[]) new Bag[vertexOne];
-        for (int v = 0; v < vertexOne; v++) {
+        indegree = new int[vertices];
+        adj = (Bag<Integer>[]) new Bag[vertices];
+        for (int v = 0; v < vertices; v++) {
             adj[v] = new Bag<Integer>();
         }
     }
+
+    /**
+     * Initializes a digraph from the specified input stream.
+     * The format is the number of vertices <em>V</em>,
+     * followed by the number of edges <em>E</em>,
+     * followed by <em>E</em> pairs of vertices,
+     * with each entry separated by whitespace.
+     *
+     * @param  sc scanner
+     * @throws IllegalArgumentException if the endpoints of any edge
+     * are not in prescribed range
+     * @throws IllegalArgumentException if the
+     *  number of vertices or edges is negative
+     * @throws IllegalArgumentException if
+     *  the input stream is in the wrong format
+     */
+    public Digraph(final Scanner sc) {
+        try {
+            this.vertices = Integer.parseInt(sc.nextLine());
+            if (vertices < 0) {
+                throw new IllegalArgumentException(
+                    "number of vertices in a Digraph must be nonnegative");
+            }
+            indegree = new int[vertices];
+            adj = (Bag<Integer>[]) new Bag[vertices];
+            for (int v = 0; v < vertices; v++) {
+                adj[v] = new Bag<Integer>();
+            }
+            int edges1 = Integer.parseInt(sc.nextLine());
+            if (edges1 < 0) {
+                throw new IllegalArgumentException(
+                    "number of edges in a Digraph must be nonnegative");
+            }
+            for (int i = 0; i < edges1; i++) {
+                int v = sc.nextInt();
+                int w = sc.nextInt();
+                addEdge(v, w);
+            }
+        } catch (NoSuchElementException e) {
+            throw new IllegalArgumentException(
+                "invalid input format in Digraph constructor", e);
+        }
+    }
+
+    /**
+     * Initializes a new digraph that is a deep copy of the specified digraph.
+     *
+     * @param  digraph the digraph to copy
+     */
+    public Digraph(final Digraph digraph) {
+        this(digraph.vertices());
+        this.edges = digraph.edges();
+        for (int v = 0; v < vertices; v++) {
+            this.indegree[v] = digraph.indegree(v);
+        }
+        for (int v = 0; v < digraph.vertices(); v++) {
+            // reverse so that adjacency list is in same order as original
+            Stack<Integer> reverse = new Stack<Integer>();
+            for (int w : digraph.adj[v]) {
+                reverse.push(w);
+            }
+            for (int w : reverse) {
+                adj[v].add(w);
+            }
+        }
+    }
+
     /**
      * Returns the number of vertices in this digraph.
      *
      * @return the number of vertices in this digraph
      */
-    public int vertex() {
+    public int vertices() {
         return vertices;
     }
 
@@ -55,18 +124,18 @@ public class Digraph {
      *
      * @return the number of edges in this digraph
      */
-    public int edge() {
+    public int edges() {
         return edges;
     }
     /**
-     * validate vertex function.
+     * Validate Vertex.
      *
      * @param      v     { parameter_description }
      */
     private void validateVertex(final int v) {
         if (v < 0 || v >= vertices) {
-            throw new IllegalArgumentException("vertex "
-             + v + " is not between 0 and " + (vertices - 1));
+            throw new IllegalArgumentException(
+                "vertex " + v + " is not between 0 and " + (vertices - 1));
         }
     }
 
@@ -75,8 +144,8 @@ public class Digraph {
      *
      * @param  v the tail vertex
      * @param  w the head vertex
-     * @throws IllegalArgumentException
-     *  unless both {@code 0 <= v < V} and {@code 0 <= w < V}
+     * @throws IllegalArgumentException unless both
+     * {@code 0 <= v < V} and {@code 0 <= w < V}
      */
     public void addEdge(final int v, final int w) {
         validateVertex(v);
@@ -91,7 +160,7 @@ public class Digraph {
      *
      * @param  v the vertex
      * @return the vertices adjacent from vertex {@code v}
-     *  in this digraph, as an iterable
+     * in this digraph, as an iterable
      * @throws IllegalArgumentException unless {@code 0 <= v < V}
      */
     public Iterable<Integer> adj(final int v) {
@@ -100,8 +169,7 @@ public class Digraph {
     }
 
     /**
-     * Returns the number of directed edges incident
-     *  from vertex {@code v}.
+     * Returns the number of directed edges incident from vertex {@code v}.
      * This is known as the <em>outdegree</em> of vertex {@code v}.
      *
      * @param  v the vertex
@@ -128,6 +196,8 @@ public class Digraph {
 
     /**
      * Returns the reverse of the digraph.
+     * 
+     * Complexity: vertices + edges.
      *
      * @return the reverse of the digraph
      */
@@ -141,23 +211,4 @@ public class Digraph {
         return reverse;
     }
 
-    /**
-     * Returns a string representation of the graph.
-     *
-     * @return the number of vertices <em>V</em>,
-     * followed by the number of edges <em>E</em>,
-     *         followed by the <em>V</em> adjacency lists
-     */
-    public String toString() {
-        StringBuilder s = new StringBuilder();
-        s.append(vertices + " vertices, " + edges + " edges " + NEWLINE);
-        for (int v = 0; v < vertices; v++) {
-            s.append(String.format("%d: ", v));
-            for (int w : adj[v]) {
-                s.append(String.format("%d ", w));
-            }
-            s.append(NEWLINE);
-        }
-        return s.toString();
-    }
 }
