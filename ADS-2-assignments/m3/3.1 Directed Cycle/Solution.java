@@ -3,9 +3,9 @@ import java.util.Scanner;
  * { class for Solution }.
  */
 public final class Solution {
-	/**
-	 * Constructs the object.
-	 */
+    /**
+     * Constructs the object.
+     */
     private Solution() {
     }
     /**
