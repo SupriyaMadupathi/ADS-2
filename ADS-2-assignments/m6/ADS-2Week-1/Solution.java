@@ -1,18 +1,36 @@
 import java.util.Scanner;
-class PageRanj {
+/**
+ * Class for page rank.
+ */
+class PageRank {
 	Digraph graph;
 	int vertices;
 	int edges;
 	int outdeg;
 	int indeg;
 	int[] array;
-	PageRanj() {
+	/**
+	 * Constructs the object.
+	 */
+	PageRank() {
     }
-	PageRanj(Digraph gr) {
+    /**
+     * Constructs the object.
+     *
+     * @param      gr    The graphics
+     */
+	PageRank(Digraph gr) {
 		graph = gr;
 		vertices = gr.V();
 		edges = gr.E();
     }
+    /**
+     * Gets the pr.
+     *
+     * @param      v1    The v 1
+     *
+     * @return     The pr.
+     */
 	public double getPR(int v1) {
 		outdeg = graph.outdegree(v1);
 		if (outdeg == 0) {
@@ -35,6 +53,11 @@ class PageRanj {
 		}
 		return pr;
     }
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
 	public String toString() {
 		String s = "";
 		System.out.println(vertices + " vertices" +", "+edges + " edges");
@@ -48,12 +71,28 @@ class PageRanj {
         return null;
 	}
 }
+/**
+ * Class for web search.
+ */
 class WebSearch {
 
 }
 
-
+/**
+ * Class for solution.
+ */
 public class Solution {
+	/**
+	 * Constructs the object.
+	 */
+	Solution(){
+
+	}
+	/**
+	 * { main method }
+	 *
+	 * @param      args  The arguments
+	 */
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		//Digraph gph = new Digraph();
@@ -63,15 +102,14 @@ public class Solution {
         // iterate count of vertices times
         // to read the adjacency list from std input
 		// and build the graph
-        for (int i = 0; i < vertex; i++) {
-        	String input = sc.nextLine();
-        	String[] tokens = input.split(" ");
-        	for (int j = 1; j < tokens.length; j++) {
-                gph.addEdge(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[j]));
+        while(sc.hasNext()) {
+        	String[] input = sc.nextLine().split(" ");
+        	for (int j = 1; j < input.length; j++) {
+                gph.addEdge(Integer.parseInt(input[0]), Integer.parseInt(input[j]));
         	}
         } 
 		// Create page ranj object and pass the graph object to the constructor
-		PageRanj pr = new PageRanj(gph);
+		PageRank pr = new PageRank(gph);
 		// print the page ranj object
 		System.out.println(pr);
 		
