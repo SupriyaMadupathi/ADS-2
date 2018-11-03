@@ -609,7 +609,8 @@ public final class StdIn {
      * Reads all remaining tokens, parses them as integers, and returns
      * them as an array of integers.
      * @return all remaining integers, as an array
-     * @throws InputMismatchException if any token cannot be parsed as an {@code int}
+     * @throws InputMismatchException if any token cannot be
+     * parsed as an {@code int}
      * @deprecated Replaced by {@link #readAllInts()}.
      */
     @Deprecated
@@ -621,7 +622,8 @@ public final class StdIn {
      * Reads all remaining tokens, parses them as doubles, and returns
      * them as an array of doubles.
      * @return all remaining doubles, as an array
-     * @throws InputMismatchException if any token cannot be parsed as a {@code double}
+     * @throws InputMismatchException if any token cannot be
+     * parsed as a {@code double}
      * @deprecated Replaced by {@link #readAllDoubles()}.
      */
     @Deprecated

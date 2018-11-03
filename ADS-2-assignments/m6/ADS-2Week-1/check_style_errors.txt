@@ -126,7 +126,5 @@ Starting audit...
 [ERROR] G:\ADS-2\ADS-2-assignments\m6\ADS-2Week-1\StdIn.java:603:5: Missing a Javadoc comment. [JavadocMethod]
 [ERROR] G:\ADS-2\ADS-2-assignments\m6\ADS-2Week-1\StdIn.java:603:36: Parameter scanner should be final. [FinalParameters]
 [ERROR] G:\ADS-2\ADS-2-assignments\m6\ADS-2Week-1\StdIn.java:603:44: 'scanner' hides a field. [HiddenField]
-[ERROR] G:\ADS-2\ADS-2-assignments\m6\ADS-2Week-1\StdIn.java:612: Line is longer than 80 characters (found 85). [LineLength]
-[ERROR] G:\ADS-2\ADS-2-assignments\m6\ADS-2Week-1\StdIn.java:624: Line is longer than 80 characters (found 87). [LineLength]
 Audit done.
-Checkstyle ends with 129 errors.
+Checkstyle ends with 127 errors.
