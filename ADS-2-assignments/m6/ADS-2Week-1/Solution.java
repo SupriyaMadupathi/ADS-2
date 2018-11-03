@@ -63,10 +63,11 @@ public class Solution {
         // iterate count of vertices times
         // to read the adjacency list from std input
 		// and build the graph
-        while(sc.hasNext()) {
-        	String[] input = sc.nextLine().split(" ");
-        	for (int j = 1; j < input.length; j++) {
-                gph.addEdge(Integer.parseInt(input[0]), Integer.parseInt(input[j]));
+        for (int i = 0; i < vertex; i++) {
+        	String input = sc.nextLine();
+        	String[] tokens = input.split(" ");
+        	for (int j = 1; j < tokens.length; j++) {
+                gph.addEdge(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[j]));
         	}
         } 
 		// Create page ranj object and pass the graph object to the constructor
