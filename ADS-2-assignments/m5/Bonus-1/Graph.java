@@ -19,7 +19,6 @@ class Graph {
      * Constructs the object.
      */
     Graph() {
-
     }
     /**
      * Constructs the object.
