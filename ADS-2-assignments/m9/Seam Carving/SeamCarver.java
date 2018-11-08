@@ -1,4 +1,4 @@
-
+import java.awt.Color;
 public class SeamCarver {
 	Picture picture;
 	double[][] energy;
@@ -26,8 +26,20 @@ public class SeamCarver {
 		if (x==0 || y == 0 || x == picture.width()-1  ||
 			y == picture.height()-1) {
 			return 1000;
+
 		}
-		return 0;
+		else {
+			Color top = picture.get(x+1, y);
+			Color bottom = picture.get(x-1, y);
+			Color left = picture.get(x, y+1);
+			Color right = picture.get(x, y-1);
+			double deltax = (Math.pow((top.getRed()- bottom.getRed()), 2))+(Math.pow((top.getGreen() - bottom.getGreen()),2)) +
+			                (Math.pow((top.getBlue() - bottom.getBlue()), 2));
+			double deltay = (Math.pow((left.getRed()- right.getRed()), 2))+
+							(Math.pow((left.getGreen() - right.getGreen()),2)) +
+			                (Math.pow((left.getBlue() - right.getBlue()), 2));
+			  return  Math.sqrt(deltax + deltay);             		
+			                		}
 	}
 
 	// sequence of indices for horizontal seam
