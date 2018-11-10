@@ -24,7 +24,7 @@ public class Solution {
                 for (Edge e : ewg.adj[i]) {
                     str += e + " " + e.weight(); 
                 }
-                System.out.println(str);
+                System.out.println(ewg);
             }
             break;
 			//Print the Graph Object.
