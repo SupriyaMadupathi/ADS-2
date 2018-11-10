@@ -25,7 +25,7 @@ public class Solution {
                     str += e + " " + e.weight(); 
                 }
             }
-                System.out.println(str);
+                System.out.println(ewg);
             break;
 			//Print the Graph Object.
 
