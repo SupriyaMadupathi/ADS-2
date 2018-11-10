@@ -36,13 +36,13 @@ Your Output:
 Expected Output: 
 No Path Found.
 Your Output: 
-No path found.
+No Path Found
 ----------------------------------------
 ########## Testcase 3: Failed ##########
 Expected Output: 
 370.0
 Your Output: 
-No path found.
+No Path Found
 ----------------------------------------
 ########## Testcase 4: Failed ##########
 Expected Output: 
