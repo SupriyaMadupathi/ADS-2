@@ -26,7 +26,7 @@ public class Solution {
         String caseToGo = sc.nextLine();
         switch (caseToGo) {
         case "Graph":
-        //System.out.println(cities + " vertices" + " " + roads + " edges");
+        System.out.println(cities + " vertices" + " " + roads + " edges");
          //   String str = "";
            // for (int i = 0; i < cities; i++) {
              //   str += i + ":";
