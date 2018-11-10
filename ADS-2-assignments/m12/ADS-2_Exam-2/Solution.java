@@ -5,23 +5,16 @@ public class Solution {
 	}
 
 	public static void main(String[] args) {
-		Scanner sc =new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
 		int cities = Integer.parseInt(sc.nextLine());
 		int roads = Integer.parseInt(sc.nextLine());
 		EdgeWeightedGraph ewg = new EdgeWeightedGraph(cities);
-		while(sc.hasNext()) {
-            String[] input = sc.nextLine().split(" ");
-            for (int j = 1; j < input.length; j++) {
-                Edge e = new Edge(Integer.parseInt(input[0]), Integer.parseInt(input[1]), Double.parseDouble(input[2]));
-                ewg.addEdge(e);
-            }
-        } 
-
-		// Self loops are not allowed...
-		// Parallel Edges are allowed...
-		// Take the Graph input here...
-
-		String caseToGo = sc.nextLine();
+		for (int i = 0; i < cities; i++) {
+		    String[] str = sc.nextLine().split(" ");
+		    Edge e = new Edge(Integer.parseInt(str[0]), Integer.parseInt(str[1]), Double.parseDouble(str[2]));
+		    ewg.addEdge(e);
+		}
+        String caseToGo = sc.nextLine();
 		switch (caseToGo) {
 		case "Graph":
 		System.out.println(cities + " vertices" + " " + roads + " edges");
@@ -47,8 +40,6 @@ public class Solution {
                 		System.out.println(j.weight());
                 	} 
                 }
-                System.out.println("No Path Found.");
-
 		}
 			// Handle the case of DirectedPaths, where two integers are given.
 			// First is the source and second is the destination.
