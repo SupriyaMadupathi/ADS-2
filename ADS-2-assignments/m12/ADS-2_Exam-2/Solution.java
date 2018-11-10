@@ -40,6 +40,7 @@ public class Solution {
                 		System.out.println(j.weight());
                 	} 
                 }
+                System.out.println("No path found.");
 		}
 			// Handle the case of DirectedPaths, where two integers are given.
 			// First is the source and second is the destination.
