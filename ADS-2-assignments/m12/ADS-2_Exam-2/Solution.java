@@ -38,6 +38,17 @@ public class Solution {
 
 
 		case "DirectedPaths":
+		while (sc.hasNextLine()) {
+			String[] s = sc.nextLine().split(" ");
+			int vertices = Integer.parseInt(s[0]);
+			int weight = Integer.parseInt(s[1]);
+                for (Edge j : ewg.adj(vertices)) {
+                	if (j.either() == weight) {
+                		System.out.println(j.weight());
+                	} 
+                }
+
+		}
 			// Handle the case of DirectedPaths, where two integers are given.
 			// First is the source and second is the destination.
 			// If the path exists print the distance between them.
