@@ -14,12 +14,12 @@ import edu.princeton.cs.algs4.StdOut;
 /**
  * Class for show seams.
  */
-class ShowSeams {
+public final class ShowSeams {
     /**
      * Constructs the object.
      */
-     protected ShowSeams() {
-        //unused constructor.
+    private ShowSeams() {
+
     }
     /**
      * Shows the horizontal seam.
@@ -32,7 +32,6 @@ class ShowSeams {
         Picture overlay = SCUtility.seamOverlay(picture, true, horizontalSeam);
         overlay.show();
     }
-
     /**
      * Shows the vertical seam.
      *
@@ -45,24 +44,20 @@ class ShowSeams {
         overlay.show();
     }
     /**
-     * { function_description }.
+     * Main function.
      *
      * @param      args  The arguments
      */
     public static void main(final String[] args) {
         Picture picture = new Picture(args[0]);
-        StdOut.printf(
-            "image is %d columns by %d rows\n",
+        StdOut.printf("image is %d columns by %d rows\n",
             picture.width(), picture.height());
         picture.show();
         SeamCarver sc = new SeamCarver(picture);
         StdOut.printf("Displaying horizontal seam calculated.\n");
         showHorizontalSeam(sc);
-
         StdOut.printf("Displaying vertical seam calculated.\n");
         showVerticalSeam(sc);
-
     }
-
 }
 

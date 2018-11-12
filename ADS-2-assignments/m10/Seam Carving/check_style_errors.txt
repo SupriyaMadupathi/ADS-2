@@ -36,6 +36,11 @@ Starting audit...
 [ERROR] G:\ADS-2\ADS-2-assignments\m10\Seam Carving\StdOut.java:269:30: Parameter x should be final. [FinalParameters]
 [ERROR] G:\ADS-2\ADS-2-assignments\m10\Seam Carving\StdOut.java:279:30: Parameter x should be final. [FinalParameters]
 [ERROR] G:\ADS-2\ADS-2-assignments\m10\Seam Carving\StdOut.java:289: Line is longer than 80 characters (found 127). [LineLength]
-[ERROR] G:\ADS-2\ADS-2-assignments\m10\Seam Carving\StdOut.java:306: Line is longer than 80 characters (found 95). [LineLength]
+[ERROR] G:\ADS-2\ADS-2-assignments\m10\Seam Carving\StdOut.java:292:31: Parameter format should be final. [FinalParameters]
+[ERROR] G:\ADS-2\ADS-2-assignments\m10\Seam Carving\StdOut.java:292:46: Parameter args should be final. [FinalParameters]
+[ERROR] G:\ADS-2\ADS-2-assignments\m10\Seam Carving\StdOut.java:302: Line is longer than 80 characters (found 127). [LineLength]
+[ERROR] G:\ADS-2\ADS-2-assignments\m10\Seam Carving\StdOut.java:305:31: Parameter locale should be final. [FinalParameters]
+[ERROR] G:\ADS-2\ADS-2-assignments\m10\Seam Carving\StdOut.java:305:46: Parameter format should be final. [FinalParameters]
+[ERROR] G:\ADS-2\ADS-2-assignments\m10\Seam Carving\StdOut.java:305:61: Parameter args should be final. [FinalParameters]
 Audit done.
-Checkstyle ends with 38 errors.
+Checkstyle ends with 43 errors.
