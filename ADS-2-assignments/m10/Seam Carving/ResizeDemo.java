@@ -15,28 +15,27 @@ import edu.princeton.cs.algs4.Stopwatch;
 /**
  * Class for resize demo.
  */
-public class ResizeDemo {
+public final class ResizeDemo {
     /**
      * Constructs the object.
      */
-    protected ResizeDemo() {
+    private ResizeDemo() {
 
     }
     /**
-     * { function_description }.
+     * Main function.
      *
      * @param      args  The arguments
      */
-    public static void main(String[] args) {
-        if (args.length != 3) {
-            StdOut.println(
-        "Usage:\njava ResizeDemo [image filename] [num cols to remove] [num rows to remove]");
+    public static void main(final String[] args) {
+        if (args.length != 2 + 1) {
+            StdOut.println("Usage:\njava ResizeDemo"
+             + "[image filename] [num cols to remove] [num rows to remove]");
             return;
         }
-
         Picture inputImg = new Picture(args[0]);
         int removeColumns = Integer.parseInt(args[1]);
-        int removeRows = Integer.parseInt(args[2]); 
+        int removeRows = Integer.parseInt(args[2]);
 
         StdOut.printf("image is %d columns by %d rows\n",
             inputImg.width(), inputImg.height());
@@ -55,11 +54,11 @@ public class ResizeDemo {
         }
         Picture outputImg = sc.picture();
 
-        StdOut.printf("new image size is %d columns by %d rows\n",sc.width(), sc.height());
+        StdOut.printf("new image size is %d columns by %d rows\n",
+            sc.width(), sc.height());
 
         StdOut.println("Resizing time: " + sw.elapsedTime() + " seconds.");
         inputImg.show();
         outputImg.show();
     }
-    
 }
