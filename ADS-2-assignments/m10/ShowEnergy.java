@@ -1,13 +1,3 @@
-/******************************************************************************
- *  Compilation:  javac ShowEnergy.java
- *  Execution:    java ShowEnergy input.png
- *  Dependencies: SeamCarver.java SCUtility.java
- *
- *  Read image from file specified as command line argument. Show original
- *  image (only useful if image is large enough).
- *
- ******************************************************************************/
-
 import edu.princeton.cs.algs4.Picture;
 import edu.princeton.cs.algs4.StdOut;
 /**
@@ -18,10 +8,10 @@ public final class ShowEnergy {
      * Constructs the object.
      */
     private ShowEnergy() {
-
+        //constructor.
     }
     /**
-     * Main function.
+     * main.
      *
      * @param      args  The arguments
      */
@@ -35,4 +25,8 @@ public final class ShowEnergy {
         SCUtility.showEnergy(sc);
     }
 }
+
+
+
+
 
