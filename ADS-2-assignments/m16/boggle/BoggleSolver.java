@@ -2,12 +2,14 @@ import java.util.ArrayList;
 public class BoggleSolver {
 	// Initializes the data structure using the given array of strings as the dictionary.
 	TST<Integer> tst;
+	int scor;
 	// (You can assume each word in the dictionary contains only the uppercase letters A through Z.)
 	public BoggleSolver(String[] dictionary) {
 		tst = new TST<Integer>();
 		for (int i = 0; i < dictionary.length; i++) {
 			tst.put(dictionary[i], i);
 		}
+		scor=0;
 	}
 
 	// Returns the set of all valid words in the given Boggle board, as an Iterable.
@@ -22,6 +24,7 @@ public class BoggleSolver {
 				dfs(i, j, str, marked, board, bag);
 			}
 		}
+		System.out.println(scor);
 		return bag;
 	}
 
@@ -38,8 +41,10 @@ public class BoggleSolver {
 		}
 		
 		if (str.length() > 2 && tst.contains(str)) {
-			//System.out.println(str);
+			
 		if (!bag.contains(str)) {
+			System.out.println(str);
+			scor += scoreOf(str);
 				bag.add(str);
 			}
 		}
@@ -50,10 +55,6 @@ public class BoggleSolver {
 						dfs(i, j, str, marked, board, bag);
 				marked[i][j] = false;	
 				}
-				
-
-				
-			
 			}
 		}
 		
@@ -68,10 +69,8 @@ public class BoggleSolver {
 	// Returns the score of the given word if it is in the dictionary, zero otherwise.
 	// (You can assume the word contains only the uppercase letters A through Z.)
 	public int scoreOf(String word) {
-if(!tst.contains(word)){
-	return 0;
-}
-		if (word.length() > 8) {
+
+		if (word.length() >= 8) {
 			return 11;
 		} else if (word.length() == 7) {
 			return 5;
