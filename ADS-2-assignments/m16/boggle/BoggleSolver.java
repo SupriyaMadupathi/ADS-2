@@ -35,7 +35,7 @@ public class BoggleSolver {
 		}
 		
 		if (str.length() > 2 && tst.contains(str)) {
-			System.out.println(str);
+			//System.out.println(str);
 		if (!bag.contains(str)) {
 				bag.add(str);
 			}
@@ -49,7 +49,7 @@ public class BoggleSolver {
 				if (marked[i][j]) {
 					continue;
 				}
-				//marked[i][j] = true;
+
 				
 				dfs(i, j, str, marked, board, bag);
 				marked[i][j] = false;
