@@ -43,7 +43,7 @@ public class BoggleSolver {
 		if (str.length() > 2 && tst.contains(str)) {
 			
 		if (!bag.contains(str)) {
-			System.out.println(str);
+			//System.out.println(str);
 			scor += scoreOf(str);
 				bag.add(str);
 			}
