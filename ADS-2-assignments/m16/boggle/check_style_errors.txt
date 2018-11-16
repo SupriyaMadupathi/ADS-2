@@ -1,13 +1,2 @@
 Starting audit...
-[ERROR] G:\ADS-2\ADS-2-assignments\m16\boggle\TST.java:134:5: Class 'TST' looks like designed for extension (can be subclassed), but the method 'hasPrefix' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'TST' final or making the method 'hasPrefix' static/final/abstract/empty, or adding allowed annotation for the method. [DesignForExtension]
-[ERROR] G:\ADS-2\ADS-2-assignments\m16\boggle\TST.java:134:5: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] G:\ADS-2\ADS-2-assignments\m16\boggle\TST.java:134:23: Parameter str should be final. [FinalParameters]
-[ERROR] G:\ADS-2\ADS-2-assignments\m16\boggle\TST.java:134:34: '{' is not preceded with whitespace. [WhitespaceAround]
-[ERROR] G:\ADS-2\ADS-2-assignments\m16\boggle\TST.java:135:34: ',' is not followed by whitespace. [WhitespaceAfter]
-[ERROR] G:\ADS-2\ADS-2-assignments\m16\boggle\TST.java:135:38: ',' is not followed by whitespace. [WhitespaceAfter]
-[ERROR] G:\ADS-2\ADS-2-assignments\m16\boggle\TST.java:136:11: 'if' is not followed by whitespace. [WhitespaceAfter]
-[ERROR] G:\ADS-2\ADS-2-assignments\m16\boggle\TST.java:136:13: '==' is not preceded with whitespace. [WhitespaceAround]
-[ERROR] G:\ADS-2\ADS-2-assignments\m16\boggle\TST.java:136:15: '==' is not followed by whitespace. [WhitespaceAround]
-[ERROR] G:\ADS-2\ADS-2-assignments\m16\boggle\TST.java:136:20: '{' is not preceded with whitespace. [WhitespaceAround]
 Audit done.
-Checkstyle ends with 10 errors.
