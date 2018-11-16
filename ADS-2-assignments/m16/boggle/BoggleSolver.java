@@ -27,7 +27,7 @@ public class BoggleSolver {
 
 	public void dfs(int row, int col, String str, boolean[][] marked, BoggleBoard board, ArrayList<String> bag) {
 		marked[row][col]=true;
-		str += board.getLetter(row, col)+"";
+		//str += board.getLetter(row, col)+"";
 		if (board.getLetter(row, col) == 'Q'){
 			str += board.getLetter(row, col) + "U";
 		} else {
