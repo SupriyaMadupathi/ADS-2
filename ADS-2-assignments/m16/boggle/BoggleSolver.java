@@ -14,10 +14,10 @@ public class BoggleSolver {
 	public Iterable<String> getAllValidWords(BoggleBoard board) {
 		
 		ArrayList<String> bag = new ArrayList<String>();
-		boolean[][] marked = new boolean[board.rows()][board.cols()];
+		
 		for (int i = 0; i < board.rows(); i++) {
 			for (int j = 0; j < board.cols(); j++) {
-				marked[i][j] = true;
+				boolean[][] marked = new boolean[board.rows()][board.cols()];
 				String str = board.getLetter(i, j)+"";
 				dfs(i, j, str, marked, board, bag);
 			}
@@ -26,6 +26,7 @@ public class BoggleSolver {
 	}
 
 	public void dfs(int row, int col, String str, boolean[][] marked, BoggleBoard board, ArrayList<String> bag) {
+		marked[row][col]=true;
 		if (str.length() > 2 && tst.contains(str)) {
 			if (!bag.contains(str)) {
 				bag.add(str);
@@ -39,7 +40,7 @@ public class BoggleSolver {
 				if (marked[i][j]) {
 					continue;
 				}
-				marked[i][j] = true;
+				//marked[i][j] = true;
 				str += board.getLetter(i, j)+"";
 				dfs(i, j, str, marked, board, bag);
 			}
