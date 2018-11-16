@@ -30,9 +30,8 @@ public class BoggleSolver {
 		str += board.getLetter(row, col)+"";
 		if (board.getLetter(row, col) == 'Q'){
 			str += board.getLetter(row, col) + "U";
-		} else {
-			str += board.getLetter(row, col);
 		}
+			//str += board.getLetter(row, col);
 		//System.out.println(tst.hasPrefix(str));
 		if(!tst.hasPrefix(str)){
 			return;
