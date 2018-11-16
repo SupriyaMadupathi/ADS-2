@@ -68,7 +68,7 @@ Score = 2
 Expected Output: 
 Score = 147
 Your Output: 
-Score = 100
+Score = 89
 ----------------------------------------
 ########## Testcase 12: Failed ##########
 Expected Output: 

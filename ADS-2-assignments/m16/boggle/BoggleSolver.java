@@ -31,8 +31,11 @@ public class BoggleSolver {
 				bag.add(str);
 			}
 		}
-		for (int i = 0; i < board.rows(); i++) {
-			for (int j = 0; j < board.cols(); j++) {
+		for (int i = row-1; i <row-1+3; i++) {
+			for (int j = col-1; j < col-1+3; j++) {
+				if (!validate(i, j, board)) {
+					continue;	
+				}
 				if (marked[i][j]) {
 					continue;
 				}
@@ -41,6 +44,13 @@ public class BoggleSolver {
 				dfs(i, j, str, marked, board, bag);
 			}
 		}
+		
+	}
+	boolean validate( int i, int j, BoggleBoard board){
+		if( i>= 0 && j>=0 && i<board.rows()&& j< board.cols()){
+			return true;
+		} 
+		return false;
 	}
 
 	// Returns the score of the given word if it is in the dictionary, zero otherwise.
