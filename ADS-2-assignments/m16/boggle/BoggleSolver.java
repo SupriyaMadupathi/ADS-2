@@ -18,7 +18,7 @@ public class BoggleSolver {
 		for (int i = 0; i < board.rows(); i++) {
 			for (int j = 0; j < board.cols(); j++) {
 				boolean[][] marked = new boolean[board.rows()][board.cols()];
-				String str = board.getLetter(i, j)+"";
+				String str = "";
 				dfs(i, j, str, marked, board, bag);
 			}
 		}
@@ -27,11 +27,20 @@ public class BoggleSolver {
 
 	public void dfs(int row, int col, String str, boolean[][] marked, BoggleBoard board, ArrayList<String> bag) {
 		marked[row][col]=true;
+		str += board.getLetter(row, col)+"";
+		
+		//System.out.println(tst.hasPrefix(str));
+		if(!tst.hasPrefix(str)){
+			return;
+		}
+		
 		if (str.length() > 2 && tst.contains(str)) {
-			if (!bag.contains(str)) {
+			System.out.println(str);
+		if (!bag.contains(str)) {
 				bag.add(str);
 			}
 		}
+		
 		for (int i = row-1; i <row-1+3; i++) {
 			for (int j = col-1; j < col-1+3; j++) {
 				if (!validate(i, j, board)) {
@@ -41,8 +50,9 @@ public class BoggleSolver {
 					continue;
 				}
 				//marked[i][j] = true;
-				str += board.getLetter(i, j)+"";
+				
 				dfs(i, j, str, marked, board, bag);
+				marked[i][j] = false;
 			}
 		}
 		
@@ -57,6 +67,9 @@ public class BoggleSolver {
 	// Returns the score of the given word if it is in the dictionary, zero otherwise.
 	// (You can assume the word contains only the uppercase letters A through Z.)
 	public int scoreOf(String word) {
+if(!tst.contains(word)){
+	return 0;
+}
 		if (word.length() > 8) {
 			return 11;
 		} else if (word.length() == 7) {
