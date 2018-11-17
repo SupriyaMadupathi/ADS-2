@@ -91,7 +91,7 @@ public class Solution {
 		for (int i = 0; i < word.length; i++) {
 			String str = word[i].toLowerCase();
 			if (st.contains(str)) {
-				st.put(str, st.get(str));
+				st.put(str, st.get(str)+ 1);
 			} else {
 				st.put(str, 1);
 			}
@@ -111,7 +111,6 @@ class T9 {
             }
 		// your code goes here
         }
-
 	// get all the prefixes that match with given prefix.
 	public Iterable<String> getAllWords(String prefix) {
 		Queue que = new Queue();
