@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+import java.util.Arrays;
 /**
  * Class for solution.
  */
@@ -180,7 +180,8 @@ class T9 {
             }
         }
         // your code goes here
-        return que;
+        
+        return (que);
         }
         
         // your code goes here
