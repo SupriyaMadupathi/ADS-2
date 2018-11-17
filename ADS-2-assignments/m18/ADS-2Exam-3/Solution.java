@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import java.util.Arrays;
+import java.util.*;
 /**
  * Class for solution.
  */
@@ -167,6 +167,7 @@ class T9 {
     //
     public Iterable<String> getSuggestions(Iterable<String> words, int k) {
         Queue que = new Queue();
+        ArrayList<String> al = new ArrayList<String>();
         MaxPQ<Integer> pq = new MaxPQ<Integer>();
         for (String str : words ) {
          pq.insert(tst.get(str));   
@@ -176,12 +177,14 @@ class T9 {
             for (String str : words) {
                 if (n == tst.get(str)) {
                     que.enqueue(str);
+                   // al.add(que);
                 }
             }
         }
         // your code goes here
-        
-        return (que);
+        //Arrays.sort(que);
+        //Collections.sort(al);
+        return que;
         }
         
         // your code goes here
