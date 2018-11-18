@@ -6,7 +6,7 @@ public class LSD {
 
    /**  
      * Rearranges the array of W-character strings in ascending order.
-     *
+     * time complexities is O(2NW)
      * @param a the array to be sorted
      * @param w the number of characters per string
      */
@@ -40,7 +40,7 @@ public class LSD {
    /**
      * Rearranges the array of 32-bit integers in ascending order.
      * This is about 2-3x faster than Arrays.sort().
-     *
+     * timecomplexity isO(2NW)
      * @param a the array to be sorted
      */
     public static void sort(int[] a) {
