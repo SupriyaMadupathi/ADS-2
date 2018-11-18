@@ -21,6 +21,7 @@ final class Solution {
         = new HashMap<String, Integer>();
         String[] tokens = sc.nextLine().split(" ");
         int edges = Integer.parseInt(tokens[1]);
+        
         String[] ver = sc.nextLine().split(" ");
         for (int i = 0; i < ver.length; i++) {
             map.put(ver[i], i);
